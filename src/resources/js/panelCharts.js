@@ -8,6 +8,7 @@ class panelCharts {
     init() {
         this.getDatosFecha()
         this.showLoading()
+        this.showLoadingDoughnut();
         this.getDatosMotivos()
     }
 
@@ -86,11 +87,24 @@ class panelCharts {
 
     showLoading() {
       let contenedor = __id("loadingChart")
-      contenedor.innerHTML = `
-        <div class="text-center">
-          <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
-        </div>
-      `
+      if( contenedor ) {
+        contenedor.innerHTML = `
+          <div class="text-center">
+            <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+          </div>
+        `
+      }
+    }
+
+    showLoadingDoughnut() {
+      let contenedor = __id("loadingChart2")
+      if( contenedor ) {
+        contenedor.innerHTML = `
+          <div class="text-center">
+            <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+          </div>
+        `
+      }
     }
 
     /* Doughtnout */
@@ -99,60 +113,71 @@ class panelCharts {
       let res = await fetch(url)
       let data = await res.json()
 
-      this.chartDoughtnout(data);
+      // this.chartDoughtnout(data);
+      this.showDoughtnout(data)
     }
+
+    showDoughtnout(data) {
+      let template = __id("doughnutTemplate");
+      if( template ) {
+        template.innerHTML = `
+          <canvas id="motivoChartDoughnut" style="width: 300px"></canvas>
+        `
+        this.chartDoughtnout(data)
+      }
+    }
+
     chartDoughtnout(motivos) {
       let ctx = __id("motivoChartDoughnut");
-
-      var data = {
-          labels: [
-              "Cumpleaños",
-              "Aniversario",
-              "BabyShower",
-              "Matine",
-              "15 Años",
-              "18 Años",
-              "50 Años",
-          ],
-          datasets: [
-              {
-                  // data: [300, 50, 100, 100, 300, 50, 100],
-                  data: motivos,
-                  backgroundColor: [
-                      "#FF6384",
-                      "#36A2EB",
-                      "#FFCE56",
-                      "#8add64",
-                      "#9d58c5",
-                      "#da623e",
-                      "#e62e2e"
-                  ],
-                  hoverBackgroundColor: [
-                      "#ff6385c4",
-                      "#36a3ebc2",
-                      "#ffcf56c0",
-                      "#8add64b7",
-                      "#9d58c5a6",
-                      "#da623ec2",
-                      "#e62e2ecb"
-                  ]
-                  
-                  
-              }]
-      };
-
-      var options = { 
-        cutoutPercentage:40,
-        animation: {
-        duration: 0
-        }
-      };
-
-      var myDoughnutChart = new Chart(ctx, {
-          type: 'doughnut',
-          data: data,
-          options: options
-      });
+      if( ctx ) {
+        var data = {
+            labels: [
+                "Cumpleaños",
+                "Aniversario",
+                "BabyShower",
+                "Matine",
+                "15 Años",
+                "18 Años",
+                "50 Años",
+            ],
+            datasets: [
+                {
+                    // data: [300, 50, 100, 100, 300, 50, 100],
+                    data: motivos,
+                    backgroundColor: [
+                        "#FF6384",
+                        "#36A2EB",
+                        "#FFCE56",
+                        "#8add64",
+                        "#9d58c5",
+                        "#da623e",
+                        "#e62e2e"
+                    ],
+                    hoverBackgroundColor: [
+                        "#ff6385c4",
+                        "#36a3ebc2",
+                        "#ffcf56c0",
+                        "#8add64b7",
+                        "#9d58c5a6",
+                        "#da623ec2",
+                        "#e62e2ecb"
+                    ]
+                    
+                    
+                }]
+        };
+        var options = { 
+          cutoutPercentage:40,
+          animation: {
+          duration: 0
+          }
+        };
+        var myDoughnutChart = new Chart(ctx, {
+            type: 'doughnut',
+            data: data,
+            options: options
+        });
+      }
     }
 }
 

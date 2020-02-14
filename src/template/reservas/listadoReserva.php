@@ -80,8 +80,7 @@
                             </div>
                             <div class="card-body">
                                 <div id="charTemplate" class="loadingShow" style="position: relative;margin: auto;height: 40vh;">
-                                    <div id="loadingChart">
-                                    </div>
+                                    <div id="loadingChart"></div>
                                 </div>
                             </div>
                         </div>
@@ -132,23 +131,15 @@
                             </div>
                         <?php endif ?>
                     </div>
-                    <!-- <div class="col-xl-4">
-                        <div class="card bg-flat-color-3">
-                            <div class="card-body">
-                                <div class="text-center">
-                                    <h4 class="card-title m-0  white-color mb-3"><?php echo $mes ?> <?php echo date("Y") ?></h4>
-                                    <span class="d-block h1 text-white" style="font-size: 40px"><?php echo $getContadorFechaMes->total ?> Registros</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
                     <div class="col-xl-12">
                         <div class="card bg-flat-color3" style="max-width: 100% !important;">
                             <div class="card-body">
                                 <h2 class="box-title">Gráfico Motivos</h2>
                             </div>
                             <div class="card-body">
-                                <canvas id="motivoChartDoughnut" style="width: 300px"></canvas>
+                                <div id="doughnutTemplate">
+                                    <div id="loadingChart2"></div>
+                                </div>
                             </div>
                         </div>
                     </div>

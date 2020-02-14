@@ -34,17 +34,17 @@
 }
 
 /* Loading */
-#loadingChart .lds-roller {
+body .lds-roller {
 	display: inline-block;
 	position: relative;
 	width: 80px;
 	height: 80px;
 }
-#loadingChart .lds-roller div {
+body .lds-roller div {
 	animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
 	transform-origin: 40px 40px;
   }
-#loadingChart .lds-roller div:after {
+body .lds-roller div:after {
 	content: " ";
 	display: block;
 	position: absolute;
@@ -54,59 +54,59 @@
 	background: #000;
 	margin: -4px 0 0 -4px;
 }
-#loadingChart .lds-roller div:nth-child(1) {
+body .lds-roller div:nth-child(1) {
 	animation-delay: -0.036s;
 }
-#loadingChart .lds-roller div:nth-child(1):after {
+body .lds-roller div:nth-child(1):after {
 	top: 63px;
 	left: 63px;
 }
-#loadingChart .lds-roller div:nth-child(2) {
+body .lds-roller div:nth-child(2) {
 	animation-delay: -0.072s;
 }
-#loadingChart .lds-roller div:nth-child(2):after {
+body .lds-roller div:nth-child(2):after {
 	top: 68px;
 	left: 56px;
 }
-#loadingChart .lds-roller div:nth-child(3) {
+body .lds-roller div:nth-child(3) {
 	animation-delay: -0.108s;
 }
-#loadingChart .lds-roller div:nth-child(3):after {
+body .lds-roller div:nth-child(3):after {
 	top: 71px;
 	left: 48px;
 }
-#loadingChart .lds-roller div:nth-child(4) {
+body .lds-roller div:nth-child(4) {
 	animation-delay: -0.144s;
 }
-#loadingChart .lds-roller div:nth-child(4):after {
+body .lds-roller div:nth-child(4):after {
 	top: 72px;
 	left: 40px;
 }
-#loadingChart .lds-roller div:nth-child(5) {
+body .lds-roller div:nth-child(5) {
 	animation-delay: -0.18s;
 }
-#loadingChart .lds-roller div:nth-child(5):after {
+body .lds-roller div:nth-child(5):after {
 	top: 71px;
 	left: 32px;
 }
-#loadingChart .lds-roller div:nth-child(6) {
+body .lds-roller div:nth-child(6) {
 	animation-delay: -0.216s;
 }
-#loadingChart .lds-roller div:nth-child(6):after {
+body .lds-roller div:nth-child(6):after {
 	top: 68px;
 	left: 24px;
 }
-#loadingChart .lds-roller div:nth-child(7) {
+body .lds-roller div:nth-child(7) {
 	animation-delay: -0.252s;
 }
-#loadingChart .lds-roller div:nth-child(7):after {
+body .lds-roller div:nth-child(7):after {
 	top: 63px;
 	left: 17px;
 }
-#loadingChart .lds-roller div:nth-child(8) {
+body .lds-roller div:nth-child(8) {
 	animation-delay: -0.288s;
 }
-#loadingChart .lds-roller div:nth-child(8):after {
+body .lds-roller div:nth-child(8):after {
 	top: 56px;
 	left: 12px;
   }
