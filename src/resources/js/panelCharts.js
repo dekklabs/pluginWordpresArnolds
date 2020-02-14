@@ -1,5 +1,7 @@
 var __log = console.log;
 var __id  = document.getElementById.bind(document);
+// const URL_URI_SITE = "http://burguer.diaeconomico.com";
+const URL_URI_SITE = "https://arnoldsburger.dev";
 
 class panelCharts {
 
@@ -10,7 +12,7 @@ class panelCharts {
     }
 
     async getDatosFecha() {
-        let url = "https://arnoldsburger.dev/wp-json/burguer/v1/cantidad-mes"
+        let url = `${URL_URI_SITE}/wp-json/burguer/v1/cantidad-mes`
         let res = await fetch(url)
         let data = await res.json()
 
@@ -93,7 +95,7 @@ class panelCharts {
 
     /* Doughtnout */
     async getDatosMotivos() {
-      let url = "https://arnoldsburger.dev/wp-json/burguer/v1/cantidad-motivo"
+      let url = `${URL_URI_SITE}/wp-json/burguer/v1/cantidad-motivo`
       let res = await fetch(url)
       let data = await res.json()
 
