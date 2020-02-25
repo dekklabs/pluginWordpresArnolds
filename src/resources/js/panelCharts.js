@@ -23,19 +23,23 @@ class panelCharts {
 
     hideClassFlex() {
       let template = __id("charTemplate");
-      if( template.classList == 'loadingShow' ) {
-        template.classList.remove("loadingShow")
+      if( template ) {
+        if( template.classList == 'loadingShow' ) {
+          template.classList.remove("loadingShow")
+        }
       }
     }
     
     showTemplateChart(data) {
       let chart = __id("charTemplate");
-      chart.innerHTML = `
-        <div class="chart-container" style="position: relative;margin: auto;height: 40vh;">
-            <canvas id="myChart"></canvas>
-        </div>
-      `
-      this.chartTrafico(data)
+      if( chart ) {
+        chart.innerHTML = `
+          <div class="chart-container" style="position: relative;margin: auto;height: 40vh;">
+              <canvas id="myChart"></canvas>
+          </div>
+        `
+        this.chartTrafico(data)
+      }
     }
 
     getFullYear() {

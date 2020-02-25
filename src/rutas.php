@@ -11,6 +11,7 @@ class Rutas {
     public function initMenu() {
         /* Talleres */
         add_menu_page( 'Burguer', 'Burguer', 'manage_options', 'burguer-reservas', array($this, 'index'), "dashicons-list-view", 26 );
+        add_submenu_page( 'burguer-reservas', 'Reportes', 'Reportes', 'manage_options', 'burguer-reservas-reportes', array($this, 'reportes'));
 
         /* Single Reserva */
         add_submenu_page( null, 'Ver Reserva', 'Ver Reserva', 'manage_options', 'burguer-reservas-views', array($this, 'verReservaID'));
@@ -65,5 +66,15 @@ class Rutas {
         $id = isset( $_REQUEST['id'] ) ? $_REQUEST['id'] : '';
         $reservas::deleteReservaID($id);
         require_once PLUGIN_BURGUER_PATH . 'src/template/reservas/deleteReserva.php';
+    }
+
+    /* Reportes */
+    public function reportes() {
+        global $reportes;
+
+        $reportes::generateReportExcel();
+
+        require_once PLUGIN_BURGUER_PATH . 'src/template/reportes/reportes.php';
+        return;
     }
 }

@@ -10,6 +10,7 @@ require_once __DIR__ . '/src/class/functions.php';
 
 /* INC */
 require_once __DIR__ . '/src/inc/reservas.php';
+require_once __DIR__ . '/src/inc/reportes.inc.php';
 
 /* Control |rutas y funciones */
 require_once __DIR__ . '/src/rutas.php';
